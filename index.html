@@ -801,11 +801,10 @@
 
     .project-card .top {
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
       align-items: flex-start;
-      gap: 16px;
-      margin-bottom: 12px;
-      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 14px;
     }
 
     .project-card h3 {
@@ -846,6 +845,31 @@
     .project-card .link-spark:hover {
       background: var(--spark);
       color: #fff;
+    }
+
+    .project-card .link-try {
+      background: linear-gradient(135deg, var(--signal), var(--spark));
+      color: #fff;
+      border: 1px solid transparent;
+      font-weight: 500;
+      box-shadow: 0 4px 12px rgba(var(--spotlight-rgb), 0.2);
+    }
+
+    .project-card .link-try:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(var(--spotlight-rgb), 0.4);
+      color: #fff;
+    }
+
+    .project-card .link-github {
+      color: var(--ink);
+      border-color: var(--line);
+      background: var(--bg-alt);
+    }
+
+    .project-card .link-github:hover {
+      background: var(--line);
+      color: var(--ink);
     }
 
     .project-card p {
@@ -1527,10 +1551,8 @@
             <div class="top">
               <h3>Comparative RAG Portfolio Agent</h3>
               <div class="action-group">
-                <button class="link link-spark"
-                  onclick="toggleChatbotDrawer('https://pradhyumn-rag-portfolio.streamlit.app/?embed=true')">⚡ Try
-                  Streamlit App</button>
-                <a class="link" href="https://github.com/kalpit-22" target="_blank" rel="noopener"
+                <a class="link link-try" href="https://pradhyumn-rag-portfolio.streamlit.app/" target="_blank" rel="noopener">⚡ Try Streamlit App</a>
+                <a class="link link-github" href="https://github.com/kalpit-22" target="_blank" rel="noopener"
                   aria-label="View RAG Portfolio on GitHub">View GitHub →</a>
               </div>
             </div>
@@ -1557,7 +1579,7 @@
           <div class="project-body">
             <div class="top">
               <h3>DevPilot</h3>
-              <a class="link" href="https://github.com/kalpit-22" target="_blank" rel="noopener"
+              <a class="link link-github" href="https://github.com/kalpit-22" target="_blank" rel="noopener"
                 aria-label="View DevPilot on GitHub">View GitHub →</a>
             </div>
             <p>Autonomous multi-agent system that plans, generates, executes, and reviews code from natural language
@@ -1572,20 +1594,54 @@
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <section id="live-demo">
-    <div class="wrap">
-      <div class="signal-divider">
-        <span class="label">Live Agent Demo</span>
-        <div class="rule"></div>
-      </div>
-      <div
-        style="width: 100%; height: 75vh; min-height: 600px; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; box-shadow: 0 20px 40px -15px var(--shadow-color); background: var(--bg-alt);">
-        <iframe src="https://agent-frontend.livelystone-d34cd2e4.centralindia.azurecontainerapps.io/" width="100%"
-          height="800px" style="border: none; border-radius: 12px;" title="DeepResearch AI"></iframe>
+        <!-- Project 3 -->
+        <div class="project-card" data-category="agent">
+          <div class="project-img-container">
+            <img src="assets/datapilot-project.png" alt="DataPilot Preview" onerror="this.style.display='none'">
+          </div>
+          <div class="project-body">
+            <div class="top">
+              <h3>DataPilot: Autonomous Data Analyst</h3>
+              <div class="action-group">
+                <a class="link link-github" href="https://github.com/kalpit-22/data_analysis_tool_DS" target="_blank" rel="noopener" aria-label="View DataPilot Cloud on GitHub">Azure Cloud Version (GitHub) →</a>
+                <a class="link link-github" href="https://github.com/kalpit-22/data_analysis_agents" target="_blank" rel="noopener" aria-label="View DataPilot Local on GitHub">Local AI Version (GitHub) →</a>
+                <a class="link link-try" href="https://data-pilot-kalpit22.azurewebsites.net/" target="_blank" rel="noopener">⚡ Try Azure App</a>
+              </div>
+            </div>
+            <p>An autonomous, self-correcting data analysis assistant powered by a dual-LLM architecture. Takes a CSV and plain-English query, then plans, executes, and self-corrects until completion. Built in two variants: a localized version using Qwen3-8B and a premium cloud-hosted version running DeepSeek models on Azure.</p>
+            <div class="tags">
+              <span class="tag-agent">DeepSeek / Qwen3</span>
+              <span class="tag-agent">Self-Correcting</span>
+              <span class="tag-llm">Python</span>
+              <span class="tag-infra">Azure</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project-card" data-category="agent">
+          <div class="project-img-container">
+            <img src="assets/webscraper-project.png" alt="Web Research Agent Preview" onerror="this.style.display='none'">
+          </div>
+          <div class="project-body">
+            <div class="top">
+              <h3>Web Research Agent</h3>
+              <div class="action-group">
+                <a class="link link-github" href="https://github.com/kalpit-22/webscrapping_ai_cloud" target="_blank" rel="noopener" aria-label="View Cloud WebScraper on GitHub">Azure Cloud Version (GitHub) →</a>
+                <a class="link link-github" href="https://github.com/kalpit-22/webscrapping_ai" target="_blank" rel="noopener" aria-label="View Local WebScraper on GitHub">Local AI Version (GitHub) →</a>
+                <a class="link link-try" href="https://agent-frontend.livelystone-d34cd2e4.centralindia.azurecontainerapps.io/" target="_blank" rel="noopener">⚡ Try Azure App</a>
+              </div>
+            </div>
+            <p>A fully autonomous web research agent that plans queries, scrapes content, filters irrelevancies, and synthesizes comprehensive markdown reports. Available as a privacy-focused local version powered by llama.cpp (Qwen3-14B) and a scalable cloud version deployed on Azure infrastructure.</p>
+            <div class="tags">
+              <span class="tag-agent">Web Scraping</span>
+              <span class="tag-agent">llama.cpp</span>
+              <span class="tag-llm">Qwen3-14B</span>
+              <span class="tag-infra">Azure</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
