@@ -1551,9 +1551,9 @@
             <div class="top">
               <h3>Comparative RAG Portfolio Agent</h3>
               <div class="action-group">
-                <a class="link link-try" href="https://pradhyumn-rag-portfolio.streamlit.app/" target="_blank" rel="noopener">⚡ Try Streamlit App</a>
                 <a class="link link-github" href="https://github.com/kalpit-22" target="_blank" rel="noopener"
                   aria-label="View RAG Portfolio on GitHub">View GitHub →</a>
+                <a class="link link-try" href="https://onqbfxdbyul27zybjmsbt64eny0rtkkv.lambda-url.ap-south-1.on.aws/" target="_blank" rel="noopener">⚡ Try AWS App</a>
               </div>
             </div>
             <p>Cloud-native, hybrid-search RAG application using Gemini 2.5 Flash and LangChain to dynamically
@@ -1768,7 +1768,7 @@
   <div class="chatbot-drawer" id="chatbotDrawer">
     <div class="chatbot-header">
       <div class="chatbot-title">
-        <span class="dot"></span> Streamlit RAG Chatbot
+        <span class="dot"></span> AWS RAG Chatbot
       </div>
       <div class="chatbot-controls">
         <button class="chatbot-btn" onclick="toggleChatbotDrawer()" title="Close Drawer">✕</button>
@@ -1776,20 +1776,20 @@
     </div>
 
     <div class="chatbot-iframe-wrap">
-      <iframe id="streamlitIframe" src="https://pradhyumn-rag-portfolio.streamlit.app/?embed=true"
-        title="Streamlit AI Chatbot"></iframe>
+      <iframe id="streamlitIframe" src="https://onqbfxdbyul27zybjmsbt64eny0rtkkv.lambda-url.ap-south-1.on.aws/"
+        title="AWS AI Chatbot"></iframe>
       <div class="chatbot-fallback-notice" id="chatbotFallback" style="display: none;">
-        <h4>Streamlit App Loading</h4>
-        <p>Your live Streamlit app is connecting...<br><code class="mono"
-            style="background: var(--bg-alt); padding: 4px 8px; border-radius: 4px; display: inline-block; margin-top: 6px;">pradhyumn-rag-portfolio.streamlit.app</code>
+        <h4>AWS App Loading</h4>
+        <p>Your live AWS app is connecting...<br><code class="mono"
+            style="background: var(--bg-alt); padding: 4px 8px; border-radius: 4px; display: inline-block; margin-top: 6px;">onqbfxdbyul27zybjmsbt64eny0rtkkv.lambda-url.ap-south-1.on.aws</code>
         </p>
       </div>
     </div>
 
     <div class="chatbot-url-bar">
       <span>URL:</span>
-      <input type="text" id="streamlitUrlInput" value="https://pradhyumn-rag-portfolio.streamlit.app/?embed=true"
-        placeholder="https://pradhyumn-rag-portfolio.streamlit.app/?embed=true">
+      <input type="text" id="streamlitUrlInput" value="https://onqbfxdbyul27zybjmsbt64eny0rtkkv.lambda-url.ap-south-1.on.aws/"
+        placeholder="https://onqbfxdbyul27zybjmsbt64eny0rtkkv.lambda-url.ap-south-1.on.aws/">
       <button onclick="updateStreamlitUrl()">Load</button>
     </div>
   </div>
@@ -1852,10 +1852,6 @@
 
     function updateStreamlitUrl() {
       let url = streamlitUrlInput.value.trim();
-      if (url && !url.includes('?embed=true') && !url.includes('&embed=true')) {
-        url += (url.includes('?') ? '&' : '?') + 'embed=true';
-        streamlitUrlInput.value = url;
-      }
       chatbotFallback.style.display = 'none';
       streamlitIframe.src = url;
     }
